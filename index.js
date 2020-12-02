@@ -4,6 +4,7 @@ const ejsMate = require('ejs-mate');
 const flash = require('connect-flash');
 const app = express();
 const port = process.env.PORT || 3000;
+import './public/img';
 
 app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
