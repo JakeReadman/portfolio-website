@@ -216,7 +216,7 @@ img {
       border-color: #ffbc00; }
 
 #header-home {
-  background: url("./public/img/showcase.jpg") no-repeat center right/cover;
+  background: url("https://pbs.twimg.com/media/EoOcs13XYAIPIQZ?format=jpg&name=4096x4096") no-repeat center right/cover;
   height: 100vh;
   color: #fff; }
   #header-home .header-content {
@@ -228,7 +228,7 @@ img {
       font-weight: 400; }
 
 #header-inner {
-  background: url("./public/img/showcase.jpg") no-repeat 20% 30%/cover;
+  background: url("https://pbs.twimg.com/media/EoOcs13XYAIPIQZ?format=jpg&name=4096x4096") no-repeat 20% 30%/cover;
   height: 5.5rem;
   border-bottom: 3px solid #ffbc00; }
 
