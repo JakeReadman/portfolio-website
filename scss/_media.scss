@@ -82,6 +82,22 @@
           'bioimage'
           'bio';
       }
+      .overlay-content {
+        width: 100%;
+        margin-top: 3.5rem;
+        padding: 0;
+
+        img {
+          padding: 0;
+          height: 100%;
+        }
+      }
+
+      .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+      }
     }
 
     &-c {

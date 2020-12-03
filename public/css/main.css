@@ -250,8 +250,7 @@ input[class^='btn-']:hover {
   /* The Overlay (background) */
   /* Position the content inside the overlay */
   /* The navigation links inside the overlay */
-  /* Position the close button (top right corner) */
-  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */ }
+  /* Position the close button (top right corner) */ }
   #about-a .about-info {
     display: grid;
     grid-template-areas: 'bioimage bio bio' 'aw1 aw2 aw3';
@@ -302,16 +301,6 @@ input[class^='btn-']:hover {
     top: 20px;
     right: 45px;
     font-size: 60px; }
-  @media screen and (max-height: 450px) {
-    #about-a .overlay-content {
-      margin: auto;
-      padding: 0; }
-      #about-a .overlay-content img {
-        padding: 0; }
-    #about-a .overlay .closebtn {
-      font-size: 40px;
-      top: 15px;
-      right: 35px; } }
   #about-a .btn-cv {
     display: block;
     font-family: 'Dosis', sans-serif;
@@ -510,6 +499,17 @@ img {
     padding: 2rem 0 1rem 0; }
   #about-a .about-info {
     grid-template-areas: 'bioimage' 'bio'; }
+  #about-a .overlay-content {
+    width: 100%;
+    margin-top: 3.5rem;
+    padding: 0; }
+    #about-a .overlay-content img {
+      padding: 0;
+      height: 100%; }
+  #about-a .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px; }
   #about-c {
     display: none; }
   #about-d .courses {
