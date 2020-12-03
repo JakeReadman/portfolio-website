@@ -93,7 +93,7 @@ input[class^='btn-']:hover {
 
 .items {
   display: grid;
-  grid-template-columns: repeat(4, 25%);
+  grid-template-columns: repeat(4, 24%);
   grid-gap: 1rem;
   box-shadow: 0 5px; }
 
@@ -164,56 +164,6 @@ input[class^='btn-']:hover {
     font-size: 1.2rem;
     opacity: 0.7;
     margin: 0; }
-
-* {
-  margin: 0;
-  padding: 0; }
-
-body {
-  font-family: 'Dosis', sans-serif;
-  line-height: 1.6;
-  background-color: #ffffff; }
-
-a {
-  text-decoration: none;
-  color: #333; }
-
-ul {
-  list-style: none; }
-
-h2,
-h3,
-h4 {
-  text-transform: uppercase; }
-
-img {
-  width: 100%; }
-
-#logo {
-  width: 70px;
-  height: 70px;
-  color: #fff;
-  text-transform: uppercase; }
-
-#main-nav {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 1rem; }
-  #main-nav ul {
-    display: flex; }
-  #main-nav li {
-    padding: 1rem 1.5rem; }
-  #main-nav a {
-    text-decoration: none;
-    color: #fff;
-    text-transform: uppercase;
-    border-bottom: 3px transparent solid;
-    padding-bottom: 0.5r;
-    transition: border-color 0.5s; }
-    #main-nav a:hover {
-      border-color: #ccc; }
-    #main-nav a.current {
-      border-color: #ffbc00; }
 
 #header-home {
   background: url("https://pbs.twimg.com/media/EoOcs13XYAIPIQZ?format=jpg&name=4096x4096") no-repeat center right/cover;
@@ -313,62 +263,192 @@ img {
     margin-bottom: 1.5rem;
     line-height: 1.8rem; }
 
-#about-b .progress {
+#about-b .tech {
+  display: grid;
+  grid-template-columns: repeat(2, 49%);
+  grid-gap: 1rem;
+  box-shadow: 0 5px; }
+
+#about-b .tech-item {
+  color: #333;
+  text-align: center;
+  position: relative;
+  background-color: #ffc933;
   overflow: hidden;
-  height: 20px;
-  background-color: #ccc;
   border-radius: 5px;
-  margin-bottom: 0.6rem; }
-  #about-b .progress div {
-    height: 100%;
-    color: #fff;
-    text-align: center;
-    background-color: #ffbc00; }
+  transition: opacity 0.3s ease-in-out; }
+  #about-b .tech-item:hover {
+    opacity: 0.8; }
 
 #about-c .about-logos {
   display: flex;
-  justify-content: space-around; }
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 1rem; }
   #about-c .about-logos i {
     align-items: center;
     color: #777;
+    height: 100%;
     -webkit-transition: -webkit-transform 0.8s ease-in-out;
     transition: transform 0.8s ease-in-out; }
   #about-c .about-logos i:hover {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
     color: #ffbc00; }
+  #about-c .about-logos .iconify {
+    -webkit-transition: -webkit-transform 0.8s ease-in-out;
+    color: #777 !important;
+    font-size: 4rem !important;
+    transition: transform 0.8s ease-in-out;
+    transition: color 0.8s ease-in-out !important;
+    border-radius: 5px; }
+  #about-c .about-logos .iconify:hover {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    color: #ffbc00 !important; }
 
-#about-d .courses {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 0.5rem; }
-  #about-d .courses .course-item {
-    border: solid 0.5px #ccc;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 0.5rem;
-    transition: all 0.3s ease; }
-    #about-d .courses .course-item ul {
-      align-items: center;
+#about-d {
+  /* The Overlay (background) */
+  /* Position the content inside the overlay */
+  /* The navigation links inside the overlay */
+  /* Position the close button (top right corner) */
+  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */ }
+  #about-d .overlay {
+    height: 0%;
+    width: 100vw;
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgba(240, 240, 245, 0.9);
+    /* grey w/opacity */
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */ }
+  #about-d .overlay-content {
+    margin: 30px auto;
+    top: 25%;
+    /* 25% from the top */
+    width: 60%;
+    /* 60% width */
+    text-align: center;
+    /* Centered text/links */ }
+  #about-d .overlay img {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    display: block;
+    /* Display block instead of inline */
+    transition: 0.3s;
+    /* Transition effects on hover (color) */ }
+  #about-d .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px; }
+  @media screen and (max-height: 450px) {
+    #about-d .overlay-content {
+      margin: auto;
+      padding: 0; }
+      #about-d .overlay-content img {
+        padding: 0; }
+    #about-d .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px; } }
+  #about-d .btn-cv {
+    font-family: 'Dosis', sans-serif;
+    display: block;
+    margin: auto auto 1rem;
+    width: 50%;
+    font-size: 1rem;
+    outline: none; }
+  #about-d .courses {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0.5rem; }
+    #about-d .courses .course-item {
+      border: solid 0.5px #ccc;
+      border-radius: 10px;
       display: flex;
-      list-style: none;
-      margin-top: auto; }
-  #about-d .courses .course-item:hover {
-    background-color: #ffbc00; }
-  #about-d .courses p {
-    padding: 0.3rem; }
-  #about-d .courses img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 0.5rem; }
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0.5rem;
+      transition: all 0.3s ease; }
+      #about-d .courses .course-item ul {
+        align-items: center;
+        display: flex;
+        list-style: none;
+        margin-top: auto; }
+    #about-d .courses .course-item:hover {
+      background-color: #ffd766;
+      opacity: 0.9; }
+    #about-d .courses p {
+      padding: 0.3rem; }
+    #about-d .courses img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 0.5rem; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: 'Dosis', sans-serif;
+  line-height: 1.6;
+  background-color: #ffffff; }
+
+a {
+  text-decoration: none;
+  color: #333; }
+
+ul {
+  list-style: none; }
+
+h2,
+h3,
+h4 {
+  text-transform: uppercase; }
+
+img {
+  width: 100%; }
+
+#logo {
+  width: 70px;
+  height: 70px;
+  color: #fff;
+  text-transform: uppercase; }
+
+#main-nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem; }
+  #main-nav ul {
+    display: flex; }
+  #main-nav li {
+    padding: 1rem 1.5rem; }
+  #main-nav a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    border-bottom: 3px transparent solid;
+    padding-bottom: 0.5r;
+    transition: border-color 0.5s; }
+    #main-nav a:hover {
+      border-color: #ccc; }
+    #main-nav a.current {
+      border-color: #ffbc00; }
 
 #main-footer {
   background-color: #333;
   color: #fff;
-  height: 7rem; }
+  height: 7rem;
+  padding: 0.8rem; }
   #main-footer .footer-content {
     display: flex;
     justify-content: space-around;
@@ -385,6 +465,7 @@ img {
         height: 20px;
         width: 20px;
         line-height: 20px;
+        margin-bottom: 0.5rem;
         padding: 0.5rem; }
       #main-footer .footer-content .contact-detail:hover i {
         background-color: #ffbc00; }
