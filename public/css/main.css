@@ -246,22 +246,82 @@ input[class^='btn-']:hover {
         background-color: #333;
         color: #fff; }
 
-#about-a .about-info {
-  display: grid;
-  grid-template-areas: 'bioimage bio bio' 'aw1 aw2 aw3';
-  grid-gap: 1.2rem; }
-
-#about-a .bio-image {
-  grid-area: bioimage; }
-
-#about-a .bio {
-  grid-area: bio;
-  border-left: 3px solid #ffbc00;
-  padding: 0.8rem; }
-  #about-a .bio h3,
-  #about-a .bio p {
-    margin-bottom: 1.5rem;
-    line-height: 1.8rem; }
+#about-a {
+  /* The Overlay (background) */
+  /* Position the content inside the overlay */
+  /* The navigation links inside the overlay */
+  /* Position the close button (top right corner) */
+  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */ }
+  #about-a .about-info {
+    display: grid;
+    grid-template-areas: 'bioimage bio bio' 'aw1 aw2 aw3';
+    grid-gap: 1.2rem; }
+  #about-a .bio-image {
+    grid-area: bioimage; }
+  #about-a .bio {
+    grid-area: bio;
+    border-left: 3px solid #ffbc00;
+    padding: 0.8rem; }
+    #about-a .bio h3,
+    #about-a .bio p {
+      margin-bottom: 1.5rem;
+      line-height: 1.8rem; }
+  #about-a .overlay {
+    height: 0%;
+    width: 100vw;
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgba(240, 240, 245, 0.9);
+    /* grey w/opacity */
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */ }
+  #about-a .overlay-content {
+    margin: 30px auto;
+    top: 25%;
+    /* 25% from the top */
+    width: 60%;
+    /* 60% width */
+    text-align: center;
+    /* Centered text/links */ }
+  #about-a .overlay img {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    display: block;
+    /* Display block instead of inline */
+    transition: 0.3s;
+    /* Transition effects on hover (color) */ }
+  #about-a .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px; }
+  @media screen and (max-height: 450px) {
+    #about-a .overlay-content {
+      margin: auto;
+      padding: 0; }
+      #about-a .overlay-content img {
+        padding: 0; }
+    #about-a .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px; } }
+  #about-a .btn-cv {
+    display: block;
+    font-family: 'Dosis', sans-serif;
+    margin: 1rem auto 1rem;
+    width: 50%;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease-in-out; }
+    #about-a .btn-cv:hover {
+      color: #f4f4f4; }
 
 #about-b .tech {
   display: grid;
@@ -307,92 +367,33 @@ input[class^='btn-']:hover {
     transform: rotate(360deg);
     color: #ffbc00 !important; }
 
-#about-d {
-  /* The Overlay (background) */
-  /* Position the content inside the overlay */
-  /* The navigation links inside the overlay */
-  /* Position the close button (top right corner) */
-  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */ }
-  #about-d .overlay {
-    height: 0%;
-    width: 100vw;
-    position: fixed;
-    /* Stay in place */
-    z-index: 1;
-    /* Sit on top */
-    left: 0;
-    top: 0;
-    background-color: rgba(240, 240, 245, 0.9);
-    /* grey w/opacity */
-    overflow-x: hidden;
-    /* Disable horizontal scroll */
-    transition: 0.5s;
-    /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */ }
-  #about-d .overlay-content {
-    margin: 30px auto;
-    top: 25%;
-    /* 25% from the top */
-    width: 60%;
-    /* 60% width */
-    text-align: center;
-    /* Centered text/links */ }
-  #about-d .overlay img {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 36px;
-    display: block;
-    /* Display block instead of inline */
-    transition: 0.3s;
-    /* Transition effects on hover (color) */ }
-  #about-d .overlay .closebtn {
-    position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 60px; }
-  @media screen and (max-height: 450px) {
-    #about-d .overlay-content {
-      margin: auto;
-      padding: 0; }
-      #about-d .overlay-content img {
-        padding: 0; }
-    #about-d .overlay .closebtn {
-      font-size: 40px;
-      top: 15px;
-      right: 35px; } }
-  #about-d .btn-cv {
-    font-family: 'Dosis', sans-serif;
-    display: block;
-    margin: auto auto 1rem;
-    width: 50%;
-    font-size: 1rem;
-    outline: none; }
-  #about-d .courses {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 0.5rem; }
-    #about-d .courses .course-item {
-      border: solid 0.5px #ccc;
-      border-radius: 10px;
+#about-d .courses {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0.5rem; }
+  #about-d .courses .course-item {
+    border: solid 0.5px #bbb;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.5rem;
+    transition: all 0.3s ease; }
+    #about-d .courses .course-item ul {
+      align-items: center;
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 0.5rem;
-      transition: all 0.3s ease; }
-      #about-d .courses .course-item ul {
-        align-items: center;
-        display: flex;
-        list-style: none;
-        margin-top: auto; }
-    #about-d .courses .course-item:hover {
-      background-color: #ffd766;
-      opacity: 0.9; }
-    #about-d .courses p {
-      padding: 0.3rem; }
-    #about-d .courses img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      margin-right: 0.5rem; }
+      list-style: none;
+      margin-top: auto; }
+  #about-d .courses .course-item:hover {
+    background-color: #ffd766;
+    opacity: 0.9; }
+  #about-d .courses p {
+    padding: 0.3rem; }
+  #about-d .courses img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 0.5rem; }
 
 * {
   margin: 0;

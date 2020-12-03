@@ -26,6 +26,75 @@
         line-height: 1.8rem;
       }
     }
+
+    /* The Overlay (background) */
+    .overlay {
+      height: 0%;
+      width: 100vw;
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      background-color: rgba(240, 240, 245, 0.9); /* grey w/opacity */
+      overflow-x: hidden; /* Disable horizontal scroll */
+      transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+    }
+
+    /* Position the content inside the overlay */
+    .overlay-content {
+      margin: 30px auto;
+      top: 25%; /* 25% from the top */
+      width: 60%; /* 60% width */
+      text-align: center; /* Centered text/links */
+    }
+
+    /* The navigation links inside the overlay */
+    .overlay img {
+      padding: 8px;
+      text-decoration: none;
+      font-size: 36px;
+      display: block; /* Display block instead of inline */
+      transition: 0.3s; /* Transition effects on hover (color) */
+    }
+
+    /* Position the close button (top right corner) */
+    .overlay .closebtn {
+      position: absolute;
+      top: 20px;
+      right: 45px;
+      font-size: 60px;
+    }
+
+    /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+    @media screen and (max-height: 450px) {
+      .overlay-content {
+        margin: auto;
+        padding: 0;
+
+        img {
+          padding: 0;
+        }
+      }
+
+      .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+      }
+    }
+
+    .btn-cv {
+      display: block;
+      font-family: 'Dosis', sans-serif;
+      margin: 1rem auto 1rem;
+      width: 50%;
+      font-size: 1rem;
+      outline: none;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        color: $light-color;
+      }
+    }
   }
   &-b {
     .tech {
@@ -85,78 +154,13 @@
     }
   }
   &-d {
-    /* The Overlay (background) */
-    .overlay {
-      height: 0%;
-      width: 100vw;
-      position: fixed; /* Stay in place */
-      z-index: 1; /* Sit on top */
-      left: 0;
-      top: 0;
-      background-color: rgba(240, 240, 245, 0.9); /* grey w/opacity */
-      overflow-x: hidden; /* Disable horizontal scroll */
-      transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
-    }
-
-    /* Position the content inside the overlay */
-    .overlay-content {
-      margin: 30px auto;
-      top: 25%; /* 25% from the top */
-      width: 60%; /* 60% width */
-      text-align: center; /* Centered text/links */
-    }
-
-    /* The navigation links inside the overlay */
-    .overlay img {
-      padding: 8px;
-      text-decoration: none;
-      font-size: 36px;
-      display: block; /* Display block instead of inline */
-      transition: 0.3s; /* Transition effects on hover (color) */
-    }
-
-    /* Position the close button (top right corner) */
-    .overlay .closebtn {
-      position: absolute;
-      top: 20px;
-      right: 45px;
-      font-size: 60px;
-    }
-
-    /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
-    @media screen and (max-height: 450px) {
-      .overlay-content {
-        margin: auto;
-        padding: 0;
-
-        img {
-          padding: 0;
-        }
-      }
-
-      .overlay .closebtn {
-        font-size: 40px;
-        top: 15px;
-        right: 35px;
-      }
-    }
-
-    .btn-cv {
-      font-family: 'Dosis', sans-serif;
-      display: block;
-      margin: auto auto 1rem;
-      width: 50%;
-      font-size: 1rem;
-      outline: none;
-    }
-
     .courses {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-gap: 0.5rem;
 
       .course-item {
-        border: solid 0.5px $medium-color;
+        border: solid 0.5px #bbb;
         border-radius: 10px;
         display: flex;
         flex-direction: column;
